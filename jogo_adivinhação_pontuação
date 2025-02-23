@@ -1,0 +1,58 @@
+// Acrescentando pontuação no jogo
+#include <stdio.h>
+
+int main() {
+	printf("*****************************************\n");
+	printf("* Bem vindo ao nosso jogo de advinhação *\n");
+	printf("*****************************************\n");
+	
+	int numerosecreto = 42;
+
+	int chute;
+	int tentativas = 1; 
+
+  int pontos =1000;
+
+	while(1){
+
+		prinf("Tentativa %d\n", tentativas++);
+		printf("Qual é o seu chute? ");
+
+		scanf("%d", &chute);
+		printf("Seu chute foi %d", chute);
+
+		if(chute < 0) {
+			printf("Você não pode chutar números negativos!\n");
+			i--;
+
+			continue;
+		}
+
+		int acertou = (chute == numerosecreto);
+		int maior = chute > numerosecreto;
+		
+		if(acertou) {
+			printf("Parabéns! você acerto!\n");
+			printf("Jogue de novo, você é um bom jogador/!\n");
+
+			break;
+		}
+		else if(maior){
+				printf("Seu chute foi maior que o número secreto");
+		}
+
+		else (menor){
+			 printf("Seu chute foi menor que o número secreto");
+		}
+
+	  tentativas++;
+
+    int pontosperdidos = (chute - numerosecreto) / 2;
+    pontos = pontos - pontosperdidos;
+	}
+
+	printf("Fim de Jogo!\n");
+	printf("Você acertou em %d tentativas!", tentativas);
+  printf("Total de pontos: %d", pontos);
+ 
+}
