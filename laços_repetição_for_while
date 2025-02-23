@@ -1,0 +1,21 @@
+
+//Faça um programa que imprima todos os números de 1 a 100 usando o laço de repetição for.
+#include <stdio.h>
+#NUMERO_IMPRESSO 100
+
+int main() {
+	for (int i = 1; i <= NUMERO_IMPRESSO; i++) {
+		printf("Os números de 1 a 100 são %d", NUMERO_IMPRESSO);
+	}
+}
+
+//Faça um programa que imprima todos os números de 1 a 100 usando o laço de repetição while.
+#include <stdio.h>
+int main() {
+
+	int numero =1;
+	while (numero <= 100) {
+		printf("%d", numero);
+		numero++;
+	}
+}
