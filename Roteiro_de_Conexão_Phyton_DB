@@ -1,0 +1,6 @@
+# Roteiro de conexão com banco de dados
+Conecte-se a um banco de dados SQLite.
+Crie três tabelas: Eventos, Participantes e Locais.
+Selecione e exiba os dados armazenados.
+
+
