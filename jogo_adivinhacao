@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+//#define é diretiva que define CONSTANTES
+//#define NUMERO_DE_TENTATIVAS 5 
+
+int main() {
+	printf("*****************************************\n");
+	printf("* Bem vindo ao nosso jogo de advinhação *\n");
+	printf("*****************************************\n");
+	
+	int numerosecreto = 42;
+
+	int chute;
+	int ganhou = 0;
+	int tentativas = 0; 
+
+	//int numerodetentativas = 5;
+	//for (int i = 1; i <= NUMERO_DE_TENTATIVAS; i++) {
+
+	while(ganhou == 0){
+
+		//prinf("Tentativa %d de %d\n", i, NUMERO_DE_TENTATIVAS);
+
+		prinf("Tentativa %d\n", tentativas+1);
+		printf("Qual é o seu chute? ");
+
+		scanf("%d", &chute);
+		printf("Seu chute foi %d", chute);
+
+		if(chute < 0) {
+			printf("Você não pode chutar números negativos!\n");
+			i--;
+
+			continue; //contrário do comando break
+		}
+
+		int acertou = (chute == numerosecreto);
+		int maior = chute > numerosecreto;
+		
+		if(acertou) {
+			printf("Parabéns! você acerto!\n");
+			printf("Jogue de novo, você é um bom jogador/!\n");
+
+			ganhou = 1;
+			//break;
+		}
+		else if(maior){
+				printf("Seu chute foi maior que o número secreto");
+		}
+
+		else (menor){
+			 printf("Seu chute foi menor que o número secreto");
+		}
+
+		tentativas = tentativas + 1;
+	}
+
+	printf("Fim de Jogo!\n");
+	printf("Você acertou em %d tentativas!", tentativas);
+ 
+}
