@@ -46,9 +46,9 @@ int main() {
 			 printf("Seu chute foi menor que o número secreto");
 		}
 
-	  tentativas++;
+	  tentativas++;0
 
-    double pontosperdidos = (chute - numerosecreto) / 2.0;
+    double pontosperdidos = (chute - numerosecreto) / (double)2;
     pontos = pontos - pontosperdidos;
 	}
 
