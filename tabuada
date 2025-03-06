@@ -7,15 +7,13 @@
 
 int main ( ) {
 int numero_usuario;
-int tabuada = 0;
-
 printf("Você quer a tabuada de qual número?"\n);
 scanf("%d", &numero_usuario);
 		
 	for (int i = 1; i <= zeroadez; i++) {
-			tabuada = numero_usuario x zeroadez;
-		}
-		printf("A tabuada do %d é: %d x %d =  %d \n",   numero_usuario, numero_usuario, zeroadez, tabuada);
+		tabuada = numero_usuario * i;
+		printf("A tabuada do %d é: %d x %d =  %d \n",   numero_usuario, numero_usuario, i, tabuada);
+	}
 }
 
 
