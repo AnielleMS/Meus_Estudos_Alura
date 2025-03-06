@@ -1,0 +1,36 @@
+// meu código da tabuada de um número
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define zeroadez 10;
+
+int main ( ) {
+int numero_usuario;
+int tabuada = 0;
+
+printf("Você quer a tabuada de qual número?"\n);
+scanf("%d", &numero_usuario);
+		
+	for (int i = 1; i <= zeroadez; i++) {
+			tabuada = numero_usuario x zeroadez;
+		}
+		printf("A tabuada do %d é: %d x %d =  %d \n",   numero_usuario, numero_usuario, zeroadez, tabuada);
+}
+
+
+
+// Tabuada de um número
+
+#include <stdio.h>
+
+int main() {
+  int numero;
+  printf("Qual tabuada você quer?");
+  scanf("%d", &numero);
+
+  for(int i = 0; i <= 10; i++) {
+    int multiplicacao = numero * i;
+    printf("%d x %d = %d\n", numero, i, multiplicacao);
+  }
+}
