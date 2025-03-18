@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+void abertura (){
+
+}
+
+
 int main(){
     char palavrasecreta[20];
     sprintf(palavrasecreta, "MELANCIA");
