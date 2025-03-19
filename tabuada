@@ -32,3 +32,16 @@ int main() {
     printf("%d x %d = %d\n", numero, i, multiplicacao);
   }
 }
+
+
+Escreva uma função potencia() que receba dois inteiros, a e b, calcule a potência a^b, ou seja, a elevado a b e imprima o resultado.
+
+#include <stdio.h>
+
+void potencia (int a, int b){
+}
+
+int main (){
+potencia();
+
+}
