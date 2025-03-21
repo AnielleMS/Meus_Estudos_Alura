@@ -39,9 +39,101 @@ Escreva uma função potencia() que receba dois inteiros, a e b, calcule a potê
 #include <stdio.h>
 
 void potencia (int a, int b){
+	potencia = a^b;
 }
 
 int main (){
+	printf("Digite um número: \n");
+	scanf("%d", &a);
+	printf("Digite um número: \n");
+	scanf("%d", &b);
 potencia();
-
+	printf("A potencia de %d^%d = %d \n", a, b, potencia);
 }
+
+Para o código acima, tem as seguintes considerações:
+O código fornecido tem alguns problemas que impedem a correta execução da função de cálculo de potência. Aqui estão os principais pontos:
+
+Operador de potência: Em C, o operador ^ é usado para operações bit a bit XOR, não para potência. Para calcular a potência, você deve usar a função pow() da biblioteca math.h.
+
+Declaração de variáveis: As variáveis a e b não foram declaradas no escopo correto.
+
+Retorno da função: A função potencia() deve retornar o valor calculado.
+
+Aqui está uma versão corrigida do código:
+
+#include <stdio.h>
+#include <math.h>
+
+double potencia(int a, int b) {
+    return pow(a, b);
+}
+
+int main() {
+    int a, b;
+    printf("Digite um número: \n");
+    scanf("%d", &a);
+    printf("Digite outro número: \n");
+    scanf("%d", &b);
+    double resultado = potencia(a, b);
+    printf("A potencia de %d^%d = %.2f \n", a, b, resultado);
+    return 0;
+}
+Essa versão usa a função pow() da biblioteca math.h para calcular a potência e retorna o valor correto. Além disso, as variáveis a e b são declaradas no escopo correto e a função potencia() retorna o resultado que é armazenado na variável resultado.
+
+
+
+
+
+
+Resposta correta:
+void potencia(int a, int b) {
+    int resultado = 1;
+    for(int i = 0; i < b; i++) {
+        resultado = resultado * a;
+    }
+    printf("O resultado é %d", resultado);
+}
+
+detalhando o funcionamento do contador utilizado para o cálculo de potência Passo a passo:
+Declaração da função:
+
+void potencia(int a, int b)
+Declara uma função chamada potencia que recebe dois parâmetros inteiros a e b.
+Inicialização da variável resultado:
+
+int resultado = 1;
+Inicializa a variável resultado com o valor 1. Esta variável armazenará o resultado da potência.
+Loop for:
+
+for(int i = 0; i < b; i++)
+Inicia um loop for com a variável i inicializada em 0. O loop continuará enquanto i for menor que b. A cada iteração, i é incrementado em 1.
+Cálculo da potência:
+
+resultado = resultado * a;
+Dentro do loop, resultado é multiplicado por a em cada iteração. Vamos detalhar isso:
+Na primeira iteração (i = 0), resultado é multiplicado por a (ou seja, resultado = 1 * a).
+Na segunda iteração (i = 1), resultado é multiplicado por a novamente (ou seja, resultado = a * a).
+Isso continua até que o loop tenha executado b vezes.
+Saída do resultado:
+
+printf("O resultado é %d", resultado);
+Após o loop, o valor final de resultado é impresso. Este valor é a elevado a b.
+Funcionamento do contador:
+Inicialização: int i = 0;
+
+O contador i é inicializado com 0.
+Condição: i < b
+
+O loop continua enquanto i for menor que b.
+Incremento: i++
+
+A cada iteração, i é incrementado em 1.
+Exemplo prático:
+Vamos supor que a = 2 e b = 3. O loop funcionará da seguinte forma:
+
+Inicialização: resultado = 1
+Primeira iteração (i = 0): resultado = 1 * 2 = 2
+Segunda iteração (i = 1): resultado = 2 * 2 = 4
+Terceira iteração (i = 2): resultado = 4 * 2 = 8
+Após o loop, resultado será 8, que é 2^3.
