@@ -33,3 +33,73 @@ for(i=1 ; i<b; i++);
 *resultado = *resultado * a;
 }
 
+-- Escreva uma função soma que recebe um array de inteiros e o tamanho do array, e retorna a soma dos números desse array.
+int nums[3];
+nums[0] = 10;
+nums[1] = 20;
+nums[2] = 30;
+int total = soma(nums, 3);
+
+Resolução:
+
+int soma (int* nums, int tam){
+  int total = 0;
+  for(i=0, i < tam, i++){
+  total += nums[i];
+  }
+  return total;
+}
+
+Resolução 2:
+#include <stdio.h>
+
+int soma(int arr[], int tamanho) {
+    int total = 0;
+    for (int i = 0; i < tamanho; i++) {
+        total += arr[i];
+    }
+    return total;
+}
+
+int main() {
+    int nums[3];
+    nums[0] = 10;
+    nums[1] = 20;
+    nums[2] = 30;
+    int total = soma(nums, 3);
+    printf("A soma dos elementos do array é: %d\n", total);
+    return 0;
+}
+
+Comentado:
+#include <stdio.h>
+Inclusão da biblioteca: A linha #include <stdio.h> inclui a biblioteca padrão de entrada e saída do C, que é necessária para usar funções como printf.
+int soma(int arr[], int tamanho) {
+    int total = 0;
+    for (int i = 0; i < tamanho; i++) {
+        total += arr[i];
+    }
+    return total;
+}
+Definição da função soma:
+Parâmetros: A função soma recebe dois parâmetros: um array de inteiros arr[] e um inteiro tamanho que representa o número de elementos no array.
+Variável total: Inicializa a variável total com 0. Esta variável será usada para acumular a soma dos elementos do array.
+Loop for: O loop percorre cada elemento do array, adicionando o valor de cada elemento à variável total.
+Retorno: Após o loop, a função retorna o valor acumulado em total.
+int main() {
+    int nums[3];
+    nums[0] = 10;
+    nums[1] = 20;
+    nums[2] = 30;
+    int total = soma(nums, 3);
+    printf("A soma dos elementos do array é: %d\n", total);
+    return 0;
+}
+Função main:
+Declaração do array nums: Declara um array de inteiros nums com 3 elementos.
+Inicialização do array: Atribui os valores 10, 20 e 30 aos elementos do array nums.
+Chamada da função soma: Chama a função soma, passando o array nums e o tamanho do array (3). O resultado da soma é armazenado na variável total.
+Impressão do resultado: Usa printf para imprimir a soma dos elementos do array.
+Retorno da função main: Retorna 0, indicando que o programa terminou com sucesso.
+
+
