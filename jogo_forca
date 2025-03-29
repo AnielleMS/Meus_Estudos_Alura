@@ -1,3 +1,20 @@
+-- Entendendo ponteiros e manipulando o endereço de memória
+
+#include <stdio.h>
+
+void calcula(int* c){ --Recebendo um endereço de memória
+    printf("calcula %d %d\n", (*c), c);
+    (*c)++;
+    printf("calcula %d %d\n", (*c), c);
+}
+
+int main (){
+int c = 10;
+    printf("main %d %d\n", c, &c);
+    calcula(&c); -- passando um endereço de memória 
+    printf("main %d %d\n", c, &c);
+}
+
 #include <stdio.h>
 #include <string.h>
 
