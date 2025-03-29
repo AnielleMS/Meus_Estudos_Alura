@@ -9,3 +9,27 @@ void soma(int* num, int a, int b) {
 int main{
 soma();
 }
+
+--Escreva uma função potencia() que receba dois inteiros, a e b, calcule a potência a^b, ou seja, a elevado a b e imprima o resultado.
+
+#include <stdio.h>
+
+void potencia (int a, int b){
+resultado = 1
+for(i=1 ; i<b; i++);
+resultado = resultado*a;
+}
+
+--Escreva a mesma função de potencia que você fez na aula anterior, só que dessa vez, o resultado deve ser salvo em um inteiro que vem na lista de parâmetros da função. 
+--Para isso, claro, você precisará receber um ponteiro de inteiro:
+int resultado;
+potencia(&resultado, 10, 5);
+
+
+#include <stdio.h>
+void potencia (int a, int b, int* resultado){
+*resultado = 1
+for(i=1 ; i<b; i++);
+*resultado = *resultado * a;
+}
+
