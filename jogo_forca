@@ -15,6 +15,16 @@ int c = 10;
     printf("main %d %d\n", c, &c);
 }
 
+-- Escreva um código que abre o arquivo "teste.txt" em modo somente leitura. 
+-- Trate também a possibilidade de erro na abertura.
+Resolução
+void abrearquivo() {
+    FILE* f;
+    f = fopen("teste.txt", "r");
+    if(f == 0) {
+        printf("Arquivo não disponível\n\n");
+        exit(1);
+    }
 #######################################################################################################################################################################
 
 #include <stdio.h>
@@ -33,6 +43,7 @@ void escolhepalavra();
 int acertou();
 int enforcou();
 int jachutou(char letra);
+void adicionapalavra();
 
 //variáveis globais
 char palavrasecreta[20];
@@ -83,6 +94,38 @@ void desenhaforca() {
     }
     printf("\n");
 
+}
+
+void adicionapalavra(){
+    
+    char quer;
+    
+    prinf("Você deseja adicionar uma nova palabra no jogo? (S/N)\n");
+    scanf(" %c", &quer);
+
+    char novapalavra[20]
+    if(quer == 'S') {
+        printf("Qual a nova palavra? \n");
+        scanf("%s", novapalavra);
+     
+    FILE* f;
+    f = fopen("palavras.txt", "r+");
+        if(f == 0) {
+        printf("Banco de dados de palavras não disponível!\n\n");
+        exit(1);    
+
+    int qtd;
+    fscanf(f, "%d", &qtd);
+    qtd++;
+
+    fseek(f, 0, SEEK_SET);
+    fprintf(f, "%d", qtd);
+    
+    fseek(f, 0, SEEK_END);
+    fprintf(f,"\n%s", novapalavra);
+    
+    fclose(f);
+    }
 }
 
 void escolhepalavra() {
@@ -154,7 +197,7 @@ int main() {
 
     // aqui invocamos a função enforcou
     } while (!acertou() && !enforcou());
-
+    adicionapalavra();
 }
 
 #######################################################################################################################################################################
