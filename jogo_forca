@@ -103,7 +103,7 @@ void adicionapalavra(){
     prinf("Você deseja adicionar uma nova palabra no jogo? (S/N)\n");
     scanf(" %c", &quer);
 
-    char novapalavra[20]
+    char novapalavra[50];
     if(quer == 'S') {
         printf("Qual a nova palavra? \n");
         scanf("%s", novapalavra);
