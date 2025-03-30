@@ -105,7 +105,7 @@ void adicionapalavra(){
 
     char novapalavra[50];
     if(quer == 'S') {
-        printf("Qual a nova palavra? \n");
+        printf("Digite a nova palavra, em letras maiúsculas: \n");
         scanf("%s", novapalavra);
      
     FILE* f;
