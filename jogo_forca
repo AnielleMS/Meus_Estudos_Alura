@@ -44,9 +44,10 @@ int acertou();
 int enforcou();
 int jachutou(char letra);
 void adicionapalavra();
+#define TAMANHO_PALAVRA 20;
 
 //variáveis globais
-char palavrasecreta[20];
+char palavrasecreta[TAMANHO_PALAVRA];
 char chutes[26];
 int chutesdados = 0;
 
@@ -103,7 +104,7 @@ void adicionapalavra(){
     prinf("Você deseja adicionar uma nova palabra no jogo? (S/N)\n");
     scanf(" %c", &quer);
 
-    char novapalavra[50];
+    char novapalavra[TAMANHO_PALAVRA];
     if(quer == 'S') {
         printf("Digite a nova palavra, em letras maiúsculas: \n");
         scanf("%s", novapalavra);
