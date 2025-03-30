@@ -19,11 +19,25 @@ int c = 10;
 
 #include <stdio.h>
 #include <string.h>
+#include "forca.h" //declarado dessa forma pois é um arquivo criado para o jogo
+
+//Declarar as variáveis abaixo em outro arquivo forca.h e declarar como header
+// lista de funções que aparecerão no arquivo
+void abertura();
+void chuta();
+void desenhaforca();
+void escolhepalavra();
+int acertou();
+int enforcou();
+int jachutou(char letra);
 
 //variáveis globais
 char palavrasecreta[20];
 char chutes[26];
-int tentativas = 0;
+int chutesdados = 0;
+
+// agora aqui começam as implementações das funções,
+// do jeito que você está acostumado.
 
 void abertura() {
     printf("/****************/\n");
@@ -36,12 +50,12 @@ void chuta() {
     printf("Qual letra? ");
     scanf(" %c", &chute);
 
-    chutes[tentativas] = chute;
+    chutes[chutesdados] = chute;
 }
 
 int jachutou(char letra) {
     int achou = 0;
-    for(int j = 0; j < tentativas; j++) {
+    for(int j = 0; j < chutesdados; j++) {
         if(chutes[j] == letra) {
             achou = 1;
             break;
@@ -53,7 +67,7 @@ int jachutou(char letra) {
 
 void desenhaforca() {
 
-    printf("Você já deu %d chutes\n", tentativas);
+    printf("Você já deu %d chutes\n", chutesdados);
 
     for(int i = 0; i < strlen(palavrasecreta); i++) {
 
@@ -72,10 +86,43 @@ void escolhepalavra() {
     sprintf(palavrasecreta, "MELANCIA");
 }
 
+int enforcou(){
+    int erros = 0;
+    // vamos fazer o loop em todos os chutes dados
+    for(int i = 0; i < chutesdados; i++){
+
+        int existe = 0;
+
+        // agora vamos olhar letra a letra da palavra secreta
+        // e ver se encontramos o chute aqui
+        for(int j = 0 ; j < strlen(palavrasecreta); j++){
+            if (chutes[i] == palavrasecreta[j]){
+                // encontramos, vamos quebrar o loop
+                existe = 1;
+                break;
+            }
+        }
+         // se nao encontrou, soma um na quantidade de erros
+        if(!existe) erros++;
+    }
+    // se tivermos mais do que 5 erros, retornamos 1
+    // caso contrario, retornamos 0.
+    return erros >= 5; // O número de tentativas será 5 (cabeça, corpo, braços, pernas e fim).
+}
+
+int acertou (){
+     for(int i = 0; i < strlen(palavrasecreta); j++){
+        if(!jachutou(palavrasecreta[i])){
+        return 0;
+        }
+     }
+     return 1;        
+}
+
 int main() {
 
-    int acertou = 0;
-    int enforcou = 0;
+    --int acertou = 0;// não precisa mais da variável pois agora tem uma função que faz isso
+    --int enforcou = 0;// não precisa mais da variável pois agora tem uma função que faz isso
 
     abertura();
     escolhepalavra();
@@ -87,7 +134,8 @@ int main() {
 
         tentativas++;
 
-    } while (!acertou && !enforcou);
+    // aqui invocamos a função enforcou
+    } while (!acertou() && !enforcou());
 
 }
 
